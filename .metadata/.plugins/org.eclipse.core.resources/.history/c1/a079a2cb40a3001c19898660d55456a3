@@ -1,0 +1,12 @@
+<endpoints
+
+       xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+
+ <endpoint name="CalculadoraService" implementation="soap.Calculadora" url-pattern="/ws/calculadora" />    
+ <endpoint name="BuscadorUFService" implementation="soap.BuscadorUF" url-pattern="/ws/buscadorUF"></endpoint>    
+ <endpoint name="SISRHService" implementation="soap.ServicoBasico" url-pattern="/soap/basico" />
+<endpoint name="EmpregadoService" implementation="sisrh.soap.ServicoEmpregado" url-pattern="/soap/empregado"></endpoint>
+
+  
+
+</endpoints>
