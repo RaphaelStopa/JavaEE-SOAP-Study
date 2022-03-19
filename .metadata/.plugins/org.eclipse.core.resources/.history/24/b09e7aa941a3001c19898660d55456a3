@@ -1,0 +1,37 @@
+package soap;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
+//import sisrh.banco.Banco;
+import dto.Empregado;
+import dto.Empregados;
+
+@WebService
+@SOAPBinding(style = Style.RPC)
+public class ServicoEmpregado {
+	
+	List<Empregado> banco = new ArrayList<>();
+	
+	Empregado empregadoUm = new Empregado();
+//	banco.add(empregadoUm);
+
+	
+
+	@WebMethod(action = "listar")
+	public Empregados listar() throws Exception {
+		Empregados empregados = new Empregados();
+		List<Empregado> lista = banco;
+		for(Empregado emp: lista) {
+			empregados.getEmpregados().add(emp);
+			}
+		return empregados;
+		}
+}
+
+
+//acbho que tem que fazer uma lista de empregados pagina 9
+//http://localhost:8080/projetosoa/ws/calculadora
